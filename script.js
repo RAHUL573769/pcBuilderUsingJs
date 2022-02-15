@@ -19,16 +19,14 @@ document.getElementById('ssd2').addEventListener('click',function(){
 document.getElementById('ssd3').addEventListener('click',function(){
     updatePrice('storage-cost',1500);
 })
-document.getElementById('paid-delivery').addEventListener('click',function(){
-    updatePrice('delivery-cost',1500);
-})
+
 
 // function onClick(clickId,updateId,price){
 //     document.getElementById(clickId).addEventListener('click',function(){
 //         updatePrice(updateId,price);
-// }
+// })
 
-onClick('paid-delivery','delivery-cost',1500);
+// onClick('paid-delivery','delivery-cost',1500);
 
 function updatePrice(itemId,price){
 
@@ -49,3 +47,23 @@ function updatePrice(itemId,price){
 
 
 }
+
+const fakeCode="pHero";
+document.getElementById("apply-btn").addEventListener('click',function(){
+
+  const code= document.getElementById('promo-input').value;
+   console.log(code); 
+   if(code===fakeCode){
+console.log("correct");
+const total=document.getElementById('total-price');
+let  totalPrice=parseFloat(total.innerText);
+const discount=(totalPrice*20)/100;
+
+totalPrice=(totalPrice-discount);
+total.innerText=totalPrice;
+
+
+   }else{
+
+   }
+})
